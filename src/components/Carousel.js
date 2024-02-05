@@ -1,8 +1,10 @@
+import React, { useState, useEffect } from "react";
 import './Carousel.css';
 import Slider from "react-slick";
 
 function Carousel({ slideDirection }) {
   const path = "cute_pics"; // path to folder
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
     `${path}/image1.jpeg`,
@@ -14,13 +16,18 @@ function Carousel({ slideDirection }) {
 
   const animationClassName = slideDirection === 'up' ? 'photobooth-frame-up' : 'photobooth-frame-down';
   
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 200,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
     arrows: false,
   };
 
@@ -30,8 +37,8 @@ function Carousel({ slideDirection }) {
         <Slider {...settings}>
         </Slider>
         {images.map((image, index) => (
-            <img key={index} src={image} alt={`Image ${index + 1}`} />
-          ))}      
+            <img key={currentIndex} src={image} alt={`Image ${currentIndex + 1}`} />
+            ))}      
       </div>
     </div>
   );

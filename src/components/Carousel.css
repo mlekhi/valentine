@@ -1,0 +1,47 @@
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+  
+.photobooth-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #FFE5EC;
+    width: 250px;
+    height: 625px;
+}
+
+.photobooth-frame-down {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    animation: slideDown 20s linear infinite;
+}
+
+.photobooth-frame-up {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation: slideUp 20s linear infinite;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+}

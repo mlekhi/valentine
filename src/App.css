@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Fuzzy+Bubbles:wght@700&family=Protest+Riot&family=Sail&display=swap');
+
+.accent {
+  color: #FF8FAB;
+  font-family: 'Sail', system-ui;
+  font-size: 45pt;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  font-family: 'Fuzzy Bubbles', sans-serif !important;
+  color: #ffff !important;
+  background-color: #FFC2D1 !important;
+  border: none;
+  padding: 15px !important;
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+  margin: 10pt !important;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover {
+  background-color: #FFB3C6;
+  transform: scale(1.1); 
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.three-columns {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column-small {
+  flex: 1;
+  max-width: 250px; 
+  margin: 10px;
 }

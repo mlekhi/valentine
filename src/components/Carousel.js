@@ -5,12 +5,11 @@ function Carousel({ slideDirection }) {
   const path = "cute_pics"; // path to folder
 
   const images = [
-    `${path}/image1.jpg`,
-    `${path}/image2.jpg`,
+    `${path}/image1.jpeg`,
+    `${path}/image2.jpeg`,
     `${path}/image3.jpg`,
     `${path}/image4.jpg`,
     `${path}/image5.jpg`,
-    `${path}/image6.jpg`,
   ]; // Replace with your actual image URLs
 
   const animationClassName = slideDirection === 'up' ? 'photobooth-frame-up' : 'photobooth-frame-down';
